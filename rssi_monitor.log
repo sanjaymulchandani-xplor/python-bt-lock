@@ -1,0 +1,37 @@
+[2025-10-23 17:13:31] ============================================================
+[2025-10-23 17:13:31] CONTINUOUS RSSI MONITOR STARTED
+[2025-10-23 17:13:31] Target Device: Hidden Apple Device
+[2025-10-23 17:13:31] Device Address: 34CAB122-3952-B9FD-817B-212B21AF0AA9
+[2025-10-23 17:13:31] RSSI Threshold: -55 dBm
+[2025-10-23 17:13:31] Auto-lock: ENABLED
+[2025-10-23 17:13:31] Monitoring interval: 5 seconds
+[2025-10-23 17:13:31] ============================================================
+[2025-10-23 17:13:33] #0001 | RSSI: -37 dBm | EXCELLENT  | Very Close (<1m) | Uptime: 0:00:02
+[2025-10-23 17:13:40] #0002 | RSSI: -39 dBm | EXCELLENT  | Very Close (<1m) | Uptime: 0:00:09
+[2025-10-23 17:13:47] #0003 | RSSI: -39 dBm | EXCELLENT  | Very Close (<1m) | Uptime: 0:00:16
+[2025-10-23 17:13:54] #0004 | RSSI: -40 dBm | EXCELLENT  | Very Close (<1m) | Uptime: 0:00:23
+[2025-10-23 17:14:03] AUTO-LOCK TRIGGERED: Signal consistently weak
+[2025-10-23 17:14:03] #0005 | RSSI: -91 dBm | VERY_WEAK  | Very Far (>20m) | Uptime: 0:00:31 -> MAC LOCKED
+[2025-10-23 17:14:10] AUTO-LOCK TRIGGERED: Signal consistently weak
+[2025-10-23 17:14:10] #0006 | RSSI: -77 dBm | WEAK       | Far (10-20m)    | Uptime: 0:00:39 -> MAC LOCKED
+[2025-10-23 17:14:17] AUTO-LOCK TRIGGERED: Signal consistently weak
+[2025-10-23 17:14:17] #0007 | RSSI: -58 dBm | GOOD       | Close (1-3m)    | Uptime: 0:00:46 -> MAC LOCKED
+[2025-10-23 17:14:24] #0008 | RSSI: -43 dBm | EXCELLENT  | Very Close (<1m) | Uptime: 0:00:53
+[2025-10-23 17:14:31] #0009 | RSSI: -38 dBm | EXCELLENT  | Very Close (<1m) | Uptime: 0:01:00
+[2025-10-23 17:14:39] AUTO-LOCK TRIGGERED: Signal consistently weak
+[2025-10-23 17:14:39] #0010 | RSSI: -58 dBm | GOOD       | Close (1-3m)    | Uptime: 0:01:07 -> MAC LOCKED
+[2025-10-23 17:14:46] #0011 | RSSI: -47 dBm | EXCELLENT  | Very Close (<1m) | Uptime: 0:01:15
+[2025-10-23 17:14:53] #0012 | RSSI: -41 dBm | EXCELLENT  | Very Close (<1m) | Uptime: 0:01:22
+[2025-10-23 17:15:00] AUTO-LOCK TRIGGERED: Device not found
+[2025-10-23 17:15:00] #0013 | DEVICE NOT FOUND | Signal: NONE      | Distance: Unknown    | Uptime: 0:01:29 -> MAC LOCKED
+[2025-10-23 17:15:07] AUTO-LOCK TRIGGERED: Signal consistently weak
+[2025-10-23 17:15:07] #0014 | RSSI: -64 dBm | FAIR       | Moderate (3-10m) | Uptime: 0:01:36 -> MAC LOCKED
+[2025-10-23 17:15:15] AUTO-LOCK TRIGGERED: Device not found
+[2025-10-23 17:15:15] #0015 | DEVICE NOT FOUND | Signal: NONE      | Distance: Unknown    | Uptime: 0:01:43 -> MAC LOCKED
+[2025-10-23 17:15:22] #0016 | RSSI: -47 dBm | EXCELLENT  | Very Close (<1m) | Uptime: 0:01:51
+[2025-10-23 17:15:29] #0017 | RSSI: -49 dBm | EXCELLENT  | Very Close (<1m) | Uptime: 0:01:58
+[2025-10-23 17:15:36] AUTO-LOCK TRIGGERED: Device not found
+[2025-10-23 17:15:36] #0018 | DEVICE NOT FOUND | Signal: NONE      | Distance: Unknown    | Uptime: 0:02:05 -> MAC LOCKED
+[2025-10-23 17:15:43] #0019 | RSSI: -52 dBm | GOOD       | Close (1-3m)    | Uptime: 0:02:12
+[2025-10-23 17:15:48] CONTINUOUS MONITOR STOPPED
+[2025-10-23 17:15:48] ============================================================

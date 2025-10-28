@@ -1,0 +1,7 @@
+{
+  "target_device_address": "E38AAD93-C3AA-78CF-6F0D-FE7A3DADD9BB",
+  "target_device_name": "Hidden Apple Device",
+  "rssi_threshold": -57,
+  "scan_interval": 3,
+  "lock_delay": 10
+}
