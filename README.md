@@ -42,11 +42,11 @@ python mac_autolock.py setup-notify
 ```
 
 **What happens:**
-1. 📱 A QR code appears in your terminal
-2. 🔔 You'll get a Mac notification with a link
-3. 📲 Open the link **on your iPhone** (not Mac)
-4. ✅ System automatically detects and configures your iPhone
-5. 🎯 RSSI threshold is set based on your current distance
+1. A QR code appears in your terminal
+2. You'll get a Mac notification with a link
+3. Open the link **on your iPhone** (not Mac)
+4. System automatically detects and configures your iPhone
+5. RSSI threshold is set based on your current distance
 
 ### Step 3: Test the System
 
