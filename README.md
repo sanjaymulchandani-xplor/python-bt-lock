@@ -11,7 +11,127 @@ Professional Bluetooth RSSI-based system that automatically locks your Mac when 
 - **Configurable Thresholds**: Customize distance and timing settings
 - **Background Service**: Run as always-on background monitoring
 
-## Quick Start
+## 🚀 Getting Started (Complete Guide)
+
+### Prerequisites
+- **macOS** (with Bluetooth enabled)
+- **iPhone** (with Bluetooth enabled)
+- **Python 3.7+** installed
+- Both devices should be paired/trusted (not required but recommended)
+
+### Step 1: Download and Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/sanjaymulchandani-xplor/python-bt-lock.git
+cd python-bt-lock
+
+# Create and activate virtual environment
+python3 -m venv bluetooth_env
+source bluetooth_env/bin/activate
+
+# Install required packages
+pip install -r requirements.txt
+```
+
+### Step 2: Configure Your iPhone (EASY METHOD)
+
+```bash
+# Run the notification-based setup (recommended)
+python mac_autolock.py setup-notify
+```
+
+**What happens:**
+1. 📱 A QR code appears in your terminal
+2. 🔔 You'll get a Mac notification with a link
+3. 📲 Open the link **on your iPhone** (not Mac)
+4. ✅ System automatically detects and configures your iPhone
+5. 🎯 RSSI threshold is set based on your current distance
+
+### Step 3: Test the System
+
+```bash
+# Test that Mac locking works
+python mac_autolock.py test-lock
+
+# Check your configuration
+python mac_autolock.py status
+```
+
+### Step 4: Start Auto-Lock Monitoring
+
+```bash
+# Start monitoring (will run until you stop it)
+python mac_autolock.py monitor
+```
+
+**How to test:**
+1. Keep terminal open to see status messages
+2. Walk away with your iPhone (to another room)
+3. Mac should lock automatically when signal gets weak
+4. Walk back - no automatic unlock (for security)
+
+### Step 5: Set Up Background Monitoring (Optional)
+
+If you want it to run automatically:
+
+```bash
+# Start as background service
+./rssi_service.sh start
+
+# Check if it's running
+./rssi_service.sh status
+
+# View real-time logs
+./rssi_service.sh follow
+
+# Stop the service
+./rssi_service.sh stop
+```
+
+### Step 6: Fine-tune Settings (If Needed)
+
+If it locks too often or not often enough:
+
+```bash
+# Watch RSSI values in real-time
+python rssi_monitor.py start
+```
+
+1. **Note the RSSI** when you're at your desk (e.g., -45 dBm)
+2. **Walk to where you want it to lock** (e.g., another room)
+3. **Note the RSSI** at that distance (e.g., -70 dBm)
+4. **Stop monitoring** (Ctrl+C)
+5. **Edit the config** to set threshold between those values
+
+```bash
+# Edit configuration file
+nano autolock_config.json
+```
+
+Change the `rssi_threshold` value:
+- **More sensitive** (locks sooner): higher number like -60
+- **Less sensitive** (locks later): lower number like -75
+
+## Quick Start (TL;DR)
+
+For experienced users who want to get started immediately:
+
+```bash
+# 1. Setup
+git clone https://github.com/sanjaymulchandani-xplor/python-bt-lock.git
+cd python-bt-lock
+python3 -m venv bluetooth_env && source bluetooth_env/bin/activate
+pip install -r requirements.txt
+
+# 2. Configure iPhone
+python mac_autolock.py setup-notify  # Follow prompts on your iPhone
+
+# 3. Start monitoring
+python mac_autolock.py monitor       # Or: ./rssi_service.sh start
+```
+
+## Detailed Setup Instructions
 
 ### 1. Setup Environment
 ```bash
@@ -270,6 +390,54 @@ nohup python rssi_monitor.py start > /dev/null 2>&1 &
 ### Stop Background Monitoring
 ```bash
 ./rssi_service.sh stop
+```
+
+## ❓ Common First-Time User Questions
+
+### "How do I know it's working?"
+```bash
+python rssi_monitor.py start
+```
+You'll see real-time output like:
+```
+#0001 | RSSI: -42 dBm | EXCELLENT  | Very Close (<1m) | Uptime: 0:00:05
+#0002 | RSSI: -45 dBm | EXCELLENT  | Very Close (<1m) | Uptime: 0:00:10
+```
+
+### "It's not detecting my iPhone"
+1. Make sure iPhone Bluetooth is ON
+2. Bring iPhone very close during setup
+3. Try the manual setup: `python mac_autolock.py setup`
+4. Make sure both devices are discoverable
+
+### "It locks too often"
+Edit `autolock_config.json` and change:
+```json
+"rssi_threshold": -75,  # Make this number smaller (more negative)
+"lock_delay": 15        # Wait longer before locking
+```
+
+### "It never locks"
+Edit `autolock_config.json` and change:
+```json
+"rssi_threshold": -55,  # Make this number bigger (less negative)  
+"lock_delay": 5         # Wait shorter time before locking
+```
+
+### "How do I stop it?"
+- **Foreground monitoring**: Press `Ctrl+C`
+- **Background service**: `./rssi_service.sh stop`
+
+### "How do I restart everything?"
+```bash
+# Stop any running monitors
+./rssi_service.sh stop
+
+# Delete configuration 
+rm autolock_config.json
+
+# Reconfigure
+python mac_autolock.py setup-notify
 ```
 
 ## Troubleshooting
